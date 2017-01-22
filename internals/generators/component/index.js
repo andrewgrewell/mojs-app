@@ -7,6 +7,7 @@
 'use strict';
 
 const componentExists = require('../utils/componentExists');
+const exportGeneratedComponent = require('../actions/exportGeneratedComponent');
 
 module.exports = {
   description: 'Add an unconnected component',
@@ -66,7 +67,7 @@ module.exports = {
       path: '../../app/components/{{properCase name}}/tests/index.test.js',
       templateFile: './component/test.js.hbs',
       abortOnFail: true,
-    }];
+    }, exportGeneratedComponent];
 
     // If they want a i18n messages file
     if (data.wantMessages) {
